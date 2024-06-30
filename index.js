@@ -14,7 +14,10 @@ function randomChoice(){
 let score = {
     win:0,
     lost:0,
-    tie:0
+    tie:0,
+    displayScore: function(){
+        return `Won: ${this.win}, Lost: ${this.lost}, Tie: ${this.tie}`;
+    }
 };
 
 function result(userMove){
@@ -62,7 +65,9 @@ function result(userMove){
             score.lost++;
         }
     }
-    alert(`Your choice is ${userMove} and Computer choice is ${computerMove}.
-Therefore, ${outcome}
-Won: ${score.win}, Lost: ${score.lost}, Tie: ${score.tie}`);
+    showResult(userMove, computerMove, outcome);
+}
+
+function showResult(userMove, computerMove, outcome){
+    alert(`Your choice is ${userMove} and Computer choice is ${computerMove}.\nTherefore, ${outcome}\n${score.displayScore()}`);
 }
