@@ -10,61 +10,41 @@ function randomChoice(){
         return 'Stump';
     }
 }
-
-function bat() {
-
-    let comupterChoice = randomChoice();
-    let result;
-
-    if (comupterChoice == 'Bat') {
-        result = `It's a tie`;
+function result(userMove){
+    let computerMove = randomChoice();
+    let outcome;
+    if(userMove === 'Bat'){
+        if (computerMove == 'Bat') {
+            outcome = `It's a tie`;
+        }
+        else if (computerMove == 'Ball') {
+            outcome = `You won !!!`;
+        }
+        else {
+            outcome = `Computer Won !!!`;
+        }
     }
-    else if (comupterChoice == 'Ball') {
-        result = `You won !!!`;
+    else if(userMove === 'Ball'){
+        if (computerMove == 'Ball') {
+            outcome = `It's a tie`;
+        }
+        else if (computerMove == 'Stump') {
+            outcome = `You won !!!`;
+        }
+        else {
+            outcome = `Computer Won !!!`;
+        }
     }
-    else {
-        result = `Computer Won !!!`;
+    else{
+        if (computerMove == 'Stump') {
+            outcome = `It's a tie`;
+        }
+        else if (computerMove == 'Bat') {
+            outcome = `You won !!!`;
+        }
+        else {
+            outcome = `Computer Won !!!`;
+        }
     }
-
-    alert(`Your Choice is Bat and Computer Choice is ${comupterChoice}, Therefore ${result}`);
-}
-
-
-function ball() {
-    
-    let comupterChoice = randomChoice();
-    let result;
-
-    if (comupterChoice == 'Ball') {
-        result = `It's a tie`;
-    }
-    else if (comupterChoice == 'Stump') {
-        result = `You won !!!`;
-    }
-    else {
-        result = `Computer Won !!!`;
-    }
-
-    alert(`Your Choice is Ball and Computer Choice is ${comupterChoice}, Therefore ${result}`);
-
-}
-
-
-function stump() {
-
-    let comupterChoice = randomChoice();
-    let result;
-
-    if (comupterChoice == 'Stump') {
-        result = `It's a tie`;
-    }
-    else if (comupterChoice == 'Bat') {
-        result = `You won !!!`;
-    }
-    else {
-        result = `Computer Won !!!`;
-    }
-
-    alert(`Your Choice is Stump and Computer Choice is ${comupterChoice}, Therefore ${result}`);
-
+    alert(`Your choice is ${userMove} and Computer choice is ${computerMove}. Therefore, ${outcome}`);
 }
