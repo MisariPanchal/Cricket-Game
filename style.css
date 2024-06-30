@@ -1,3 +1,32 @@
 body{
     text-align: center;
 }
+h1 {
+    font-family: "Kaushan Script", cursive;
+    color: #2d2d2d;
+    font-size: 36px;
+    text-shadow: 2px 2px #d1d1d1;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-family: "Open Sans", sans-serif;
+    color: #2d2d2d;
+    font-size: 20px;
+    border-radius: 8px;
+}
+.choice-button{
+    border: none;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    background-color: rgb(164, 212, 130);
+    cursor: pointer;
+}
+.choice-button.reset{
+    background-color: rgb(202, 200, 200);
+}
+.choice-button .choice-image{
+    width: 75%;
+}

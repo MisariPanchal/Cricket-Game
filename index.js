@@ -11,14 +11,24 @@ function randomChoice(){
     }
 }
 
-let score = {
-    win:0,
-    lost:0,
-    tie:0,
-    displayScore: function(){
+let scoreDetails = localStorage.getItem('Product');
+let score;
+resetScore(scoreDetails);
+
+function resetScore(scoreDetails){
+    // if scoreDetails is falsy than assign the 0,0,0 values otherwise assign scoreDetails.
+    score = scoreDetails ? JSON.parse(scoreDetails) : {
+        win:0,
+        lost:0,
+        tie:0,
+    };
+
+    score.displayScore = function(){
         return `Won: ${this.win}, Lost: ${this.lost}, Tie: ${this.tie}`;
     }
-};
+    
+    showResult();
+}
 
 function result(userMove){
     let computerMove = randomChoice();
@@ -69,5 +79,11 @@ function result(userMove){
 }
 
 function showResult(userMove, computerMove, outcome){
-    alert(`Your choice is ${userMove} and Computer choice is ${computerMove}.\nTherefore, ${outcome}\n${score.displayScore()}`);
+    localStorage.setItem('Product', JSON.stringify(score));
+
+    document.querySelector('#user-move').innerHTML = userMove ? `User Move: ${userMove}` : ``;
+    document.querySelector('#computer-move').innerHTML = computerMove ? `Computer Move: ${computerMove}` : ``;
+    document.querySelector('#result').innerHTML = outcome || ``;
+    document.querySelector('#score').innerHTML = score.displayScore();
 }
+
