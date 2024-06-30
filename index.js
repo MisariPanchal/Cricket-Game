@@ -1,8 +1,7 @@
-function bat() {
+let comupterChoice;
+function randomChoice(){
     let randomNum = Math.random() * 3;
-    let comupterChoice;
-    let result;
-
+    
     if (randomNum > 0 && randomNum <= 1) {
         comupterChoice = 'Bat';
     }
@@ -12,7 +11,12 @@ function bat() {
     else {
         comupterChoice = 'Stump';
     }
+}
 
+function bat() {
+    
+    randomChoice();
+    let result;
 
     if (comupterChoice == 'Bat') {
         result = `It's a tie`;
@@ -29,20 +33,9 @@ function bat() {
 
 
 function ball() {
-    let randomNum = Math.random() * 3;
-    let comupterChoice;
+    
+    randomChoice();
     let result;
-
-    if (randomNum > 0 && randomNum <= 1) {
-        comupterChoice = 'Bat';
-    }
-    else if (randomNum > 1 && randomNum <= 2) {
-        comupterChoice = 'Ball';
-    }
-    else {
-        comupterChoice = 'Stump';
-    }
-
 
     if (comupterChoice == 'Ball') {
         result = `It's a tie`;
@@ -60,20 +53,9 @@ function ball() {
 
 
 function stump() {
-    let randomNum = Math.random() * 3;
-    let comupterChoice;
+
+    randomChoice();
     let result;
-
-    if (randomNum > 0 && randomNum <= 1) {
-        comupterChoice = 'Bat';
-    }
-    else if (randomNum > 1 && randomNum <= 2) {
-        comupterChoice = 'Ball';
-    }
-    else {
-        comupterChoice = 'Stump';
-    }
-
 
     if (comupterChoice == 'Stump') {
         result = `It's a tie`;
