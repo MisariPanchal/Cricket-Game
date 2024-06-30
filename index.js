@@ -1,21 +1,19 @@
-let comupterChoice;
 function randomChoice(){
     let randomNum = Math.random() * 3;
-    
     if (randomNum > 0 && randomNum <= 1) {
-        comupterChoice = 'Bat';
+        return 'Bat';
     }
     else if (randomNum > 1 && randomNum <= 2) {
-        comupterChoice = 'Ball';
+        return 'Ball';
     }
     else {
-        comupterChoice = 'Stump';
+        return 'Stump';
     }
 }
 
 function bat() {
-    
-    randomChoice();
+
+    let comupterChoice = randomChoice();
     let result;
 
     if (comupterChoice == 'Bat') {
@@ -34,7 +32,7 @@ function bat() {
 
 function ball() {
     
-    randomChoice();
+    let comupterChoice = randomChoice();
     let result;
 
     if (comupterChoice == 'Ball') {
@@ -54,7 +52,7 @@ function ball() {
 
 function stump() {
 
-    randomChoice();
+    let comupterChoice = randomChoice();
     let result;
 
     if (comupterChoice == 'Stump') {
